@@ -1,30 +1,29 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-</script>
-
 <template>
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
-  </div>
-  <HelloWorld msg="Vite + Vue" />
+  <header class="py-4 bg-slate-900 text-slate-400">
+    <div class="container mx-auto">
+      <nav>
+        <ul class="flex">
+          <li class="mr-5 font-bold">
+            <router-link to="/">Coins</router-link>
+          </li>
+          <li class="font-bold">
+            <router-link to="/fng">Fear & Greed index</router-link>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main role="main">
+    <router-view class="mt-5" />
+  </main>
 </template>
 
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
+<script>
+export default {
+  name: "App",
+};
+</script>
+
+<style>
 </style>
