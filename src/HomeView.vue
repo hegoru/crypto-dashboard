@@ -29,6 +29,8 @@ import TickersFound from './components/TickersFound.vue';
 import CryptoTickers from './components/CryptoTickers.vue';
 import PaginationButtons from './components/pagination/PaginationButtons.vue';
 
+const REQUIRED_PARAMS = ['filter', 'page'];
+
 export default {
   components: {
     CryptoFilter,
@@ -51,7 +53,6 @@ export default {
   created() {
     const searchParams = new URLSearchParams(window.location.search);
 
-    const REQUIRED_PARAMS = ['filter', 'page'];
     REQUIRED_PARAMS.forEach(requiredParam => {
       if (searchParams.has(requiredParam)) {
         this[requiredParam] = searchParams.get(requiredParam);
